@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "TankBarrel.h"
 #include "AimingComponent.h"
 
 // Sets default values for this component's properties
@@ -60,7 +60,7 @@ void UAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 
 }
 
-void UAimingComponent::SetBarrelReference(UStaticMeshComponent *BarrelToSet)
+void UAimingComponent::SetBarrelReference(UTankBarrel *BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
@@ -73,6 +73,7 @@ void UAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
 
 	// Move the barrel the right amount this frame
+	Barrel->Elevate(5);
 
 	// Given a Max Elevation Speed and frame time
 }
