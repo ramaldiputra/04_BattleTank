@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TankBarrel.h"
+#include "TankTurret.h"
 #include "AimingComponent.h"
 
 // Sets default values for this component's properties
@@ -70,6 +71,11 @@ void UAimingComponent::SetBarrelReference(UTankBarrel *BarrelToSet)
 	Barrel = BarrelToSet;
 }
 
+void UAimingComponent::SetTurretReference(UTankTurret *TurretToSet)
+{
+	Turret = TurretToSet;
+}
+
 void UAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
 	// Find out the difference between Barrel rotation and AimDirection
@@ -79,6 +85,7 @@ void UAimingComponent::MoveBarrelTowards(FVector AimDirection)
 
 	// Move the barrel the right amount this frame
 	Barrel->Elevate(DeltaRotator.Pitch);
+	Turret->Rotate(DeltaRotator.Yaw);
 
 	// Given a Max Elevation Speed and frame time
 }
