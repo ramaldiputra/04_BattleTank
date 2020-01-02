@@ -18,7 +18,6 @@ ATank::ATank()
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -47,5 +46,10 @@ void ATank::SetTurretReference(UTankTurret *TurretToSet) {
 void ATank::AimAt(FVector HitLocation)
 {
 	AimingComponent->AimAt(HitLocation, LaunchSpeed);
+}
+
+void ATank::Fire()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Fire Clicked"));
 }
 
