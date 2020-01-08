@@ -48,7 +48,7 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 10000.f;
+	float LaunchSpeed = 4000.f;
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint; // Alternative	https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/TSubclassOf/index.html
