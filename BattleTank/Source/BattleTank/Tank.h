@@ -47,12 +47,17 @@ public:
 	void Fire();
 
 private:
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float LaunchSpeed = 4000.f;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint; // Alternative	https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/TSubclassOf/index.html
 
 	// Local Barrel reference for spawning projectile
 	UTankBarrel* Barrel = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float ReloadTimeSeconds = 3;
+
+	double LastFireTime = 0;
 };
