@@ -28,9 +28,6 @@ protected:
 	virtual void BeginPlay() override;
 	UAimingComponent* AimingComponent = nullptr;
 
-	UPROPERTY(BlueprintReadOnly)
-	UTankMovementComponent* TankMovementComponent = nullptr;
-
 
 public:	
 	// Called every frame
