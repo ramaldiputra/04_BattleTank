@@ -11,6 +11,7 @@
 class UTankBarrel;
 class UTankTurret;
 class UAimingComponent;
+class UTankMovementComponent;
 class AProjectile;
 
 UCLASS()
@@ -26,6 +27,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	UAimingComponent* AimingComponent = nullptr;
+
+	UPROPERTY(BlueprintReadOnly)
+	UTankMovementComponent* TankMovementComponent = nullptr;
 
 
 public:	
